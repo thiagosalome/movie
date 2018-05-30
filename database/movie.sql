@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Maio-2018 às 01:11
+-- Generation Time: 30-Maio-2018 às 02:50
 -- Versão do servidor: 5.7.21-log
 -- PHP Version: 7.2.2
 
@@ -166,7 +166,8 @@ ALTER TABLE `diretor`
 -- Indexes for table `documentario`
 --
 ALTER TABLE `documentario`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_idfilme_documentario` (`idFilme`);
 
 --
 -- Indexes for table `filme`
@@ -178,7 +179,8 @@ ALTER TABLE `filme`
 -- Indexes for table `longametragem`
 --
 ALTER TABLE `longametragem`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_idfilme_longametragem` (`idFilme`);
 
 --
 -- Indexes for table `producao`
@@ -231,6 +233,22 @@ ALTER TABLE `longametragem`
 --
 ALTER TABLE `produtor`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `documentario`
+--
+ALTER TABLE `documentario`
+  ADD CONSTRAINT `fk_idfilme_documentario` FOREIGN KEY (`idFilme`) REFERENCES `filme` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limitadores para a tabela `longametragem`
+--
+ALTER TABLE `longametragem`
+  ADD CONSTRAINT `fk_idfilme_longametragem` FOREIGN KEY (`idFilme`) REFERENCES `filme` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
