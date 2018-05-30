@@ -1,23 +1,39 @@
 <?php
 
 require "filmeDAO.php";
-$method = $_SERVER['REQUEST_METHOD'];
 $filme = new filmeDAO();
 
-switch($method){
-
-    case "POST":
+if(isset($_POST["create"])){
+    try{
         $filme->insert($_POST);
-
-    case "PUT":
-        parse_str(file_get_contents('php://input'), $_PUT);
-        $filme->update($_PUT);
-    break;
-
-    case "DELETE":
-        parse_str(file_get_contents('php://input'), $_DELETE);
-        $filme->delete($_DELETE);
-    break;
+    }
+    catch(Exception $e){
+        echo "<script>
+                alert('Ocorreu uma exceção! Tente Novamente!');
+                history.back();
+            </script>";
+    };
 }
-
+else if(isset($_POST["update"])){
+    try{
+        $filme->update($_POST);
+    }
+    catch(Exception $e){
+        echo "<script>
+                alert('Ocorreu uma exceção! Tente Novamente!');
+                history.back();
+            </script>";
+    };
+}
+else if(isset($_POST["delete"])){
+    try{
+        $filme->delete($_POST);
+    }
+    catch(Exception $e){
+        echo "<script>
+                alert('Ocorreu uma exceção! Tente Novamente!');
+                history.back();
+            </script>";
+    };
+}
 ?>

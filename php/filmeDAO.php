@@ -14,37 +14,47 @@ class filmeDAO{
 
         $insert->setTitulo($post["titulo"]);
         $insert->setVerba($post["verba"]);
-        $insert->setDtGravacaoInicio($post["gravacaoInicial"]);
-        $insert->setDtGravacaoFim($post["gravacaoFinal"]);
+        $insert->setDtGravacaoInicio(new \DateTime($post["gravacaoInicial"] ." 00:00:00"));
+        $insert->setDtGravacaoFim(new \DateTime($post["gravacaoFinal"] ." 00:00:00"));
 
         $entityManager->persist($insert); 
         $entityManager->flush();
         
-        return $insert;
+        echo "<script>
+                alert('Filme cadastrado com sucesso!');
+                location = '../index.php';
+            </script>";
     }       
 
-    public function update($update){                
+    public function update($post){                
         require "bootstrap.php";
-        $update = $entityManager->find('Filme', $update["id"]);
+        $update = $entityManager->find('Filme', $post["id"]);
 
         $update->setTitulo($post["titulo"]);
         $update->setVerba($post["verba"]);
-        $update->setDtGravacaoInicio($post["gravacaoInicial"]);
-        $update->setDtGravacaoFim($post["gravacaoFinal"]);
+        $update->setDtGravacaoInicio(new \DateTime($post["gravacaoInicial"] ." 00:00:00"));
+        $update->setDtGravacaoFim(new \DateTime($post["gravacaoFinal"] ." 00:00:00"));
 
         $entityManager->persist($update); 
         $entityManager->flush();
         
-        return $update;
+        echo "<script>
+                alert('Filme alterado com sucesso!');
+                location = '../index.php';
+            </script>";
     } 
     
-    public function delete($delete){
+    public function delete($post){
         require "bootstrap.php";
         
-        $delete = $entityManager->find('Filme', $delete["id"]);
+        $delete = $entityManager->find('Filme', $post["id"]);
         $entityManager->remove($delete); 
         $entityManager->flush();
-        return true;
+        
+        echo "<script>
+                alert('Filme deletado com sucesso!');
+                location = '../index.php';
+            </script>";
     }  
 }
 ?>
