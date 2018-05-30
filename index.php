@@ -19,7 +19,55 @@
     </header>
     <main>
         <div class="container">
-            
+            <div class="row">
+                <h3>Adicionar</h3>
+                <form action="">
+                    <fieldset>
+                        <input type="text" name="titulo" placeholder="Título">
+                        <input type="text" name="verba" placeholder="Verba">
+                        <input type="date" name="gravacaoInicial" placeholder="Início das Gravações" id="">
+                        <input type="date" name="gravacaoFinal" placeholder="Fim das Gravações" id="">
+                    </fieldset>
+                </form>
+            </div>
+            <hr>
+            <div class="row">
+                <h3>Deletar</h3>
+                <form action="">
+                    <fieldset>
+                        <input type="number" name="id" placeholder="Id do filme a ser deletado">
+                    </fieldset>
+                </form>
+            </div>
+            <hr>
+            <div class="row">
+                <h3>Atualizar</h3>
+                <form action="">
+                    <fieldset>
+                        <input type="number" name="id" placeholder="Id do filme a ser atualizado">
+                        <input type="text" name="titulo" placeholder="Título">
+                        <input type="text" name="verba" placeholder="Verba">
+                        <input type="date" name="gravacaoInicial" placeholder="Início das Gravações" id="">
+                        <input type="date" name="gravacaoFinal" placeholder="Fim das Gravações" id="">
+                    </fieldset>
+                </form>
+            </div>
+            <hr>
+            <div class="row">
+                <h3>Listar</h3>
+                <table>
+                    <thead>
+                        <tr>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 </body>

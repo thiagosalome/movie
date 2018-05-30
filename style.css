@@ -16,10 +16,21 @@
         margin: 0;
     }
 
-.card{
-    margin: 50px auto;
+main{
+    margin-top: 20px;
 }
 
-h2{
+h3{
     font-size: 20px;
+    display: block;
+    width: 100%;
+}
+
+input{
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    padding: 5px;
+    border-radius: 5px;
+    color: #777777;
 }
