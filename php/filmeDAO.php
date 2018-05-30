@@ -8,17 +8,14 @@ class filmeDAO{
         return $filme;
     }
 
-    public function insert(filmeVo $filmeVo){
+    public function insert($post){
         require "bootstrap.php"; 
-        $insert = new filme;
+        $insert = new Filme;
 
-        $insert->setNome($filmeVo->getNome());
-        $insert->setMedida($filmeVo->getMedida());
-        $insert->setTipoproteina($filmeVo->getTipoproteina());
-        $insert->setCaloria($filmeVo->getCaloria());
-        $insert->setProteina($filmeVo->getProteina());
-        $insert->setCarboidrato($filmeVo->getCarboidrato());
-        $insert->setGordura($filmeVo->getGordura());
+        $insert->setTitulo($post["titulo"]);
+        $insert->setVerba($post["verba"]);
+        $insert->setDtGravacaoInicio($post["gravacaoInicial"]);
+        $insert->setDtGravacaoFim($post["gravacaoFinal"]);
 
         $entityManager->persist($insert); 
         $entityManager->flush();
@@ -26,17 +23,14 @@ class filmeDAO{
         return $insert;
     }       
 
-    public function update(filmeVo $filmeVo){                
+    public function update($update){                
         require "bootstrap.php";
-        $update = $entityManager->find('Filme', $filmeVo->getId());
+        $update = $entityManager->find('Filme', $update["id"]);
 
-        $update->setNome($filmeVo->getNome());
-        $update->setMedida($filmeVo->getMedida());
-        $update->setTipoproteina($filmeVo->getTipoproteina());
-        $update->setCaloria($filmeVo->getCaloria());
-        $update->setProteina($filmeVo->getProteina());
-        $update->setCarboidrato($filmeVo->getCarboidrato());
-        $update->setGordura($filmeVo->getGordura());
+        $update->setTitulo($post["titulo"]);
+        $update->setVerba($post["verba"]);
+        $update->setDtGravacaoInicio($post["gravacaoInicial"]);
+        $update->setDtGravacaoFim($post["gravacaoFinal"]);
 
         $entityManager->persist($update); 
         $entityManager->flush();
@@ -44,10 +38,10 @@ class filmeDAO{
         return $update;
     } 
     
-    public function delete(filmeVo $filmeVo){
+    public function delete($delete){
         require "bootstrap.php";
         
-        $delete = $entityManager->find('Filme', $filmeVo->getId());
+        $delete = $entityManager->find('Filme', $delete["id"]);
         $entityManager->remove($delete); 
         $entityManager->flush();
         return true;

@@ -15,7 +15,7 @@ class Filme{
     /**
      * @Column(type="string", name="titulo")
      */
-    protected $title;
+    protected $titulo;
 
     /**
      * @Column(type="float", name="verba")
@@ -55,21 +55,21 @@ class Filme{
     }
 
     /**
-     * Get the value of title
+     * Get the value of titulo
      */ 
-    public function getTitle()
+    public function getTitulo()
     {
-        return $this->title;
+        return $this->titulo;
     }
 
     /**
-     * Set the value of title
+     * Set the value of titulo
      *
      * @return  self
      */ 
-    public function setTitle($title)
+    public function setTitulo($titulo)
     {
-        $this->title = $title;
+        $this->titulo = $titulo;
 
         return $this;
     }

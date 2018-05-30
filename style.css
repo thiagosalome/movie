@@ -33,4 +33,15 @@ input{
     padding: 5px;
     border-radius: 5px;
     color: #777777;
+    width: 100%;
+}
+
+input[type="submit"]{
+    background-color: #2fa72f;
+    color: #ffffff;
+    border: none;
+}
+
+input[type="submit"]:hover{
+    cursor: pointer;
 }

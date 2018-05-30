@@ -21,34 +21,37 @@
         <div class="container">
             <div class="row">
                 <h3>Adicionar</h3>
-                <form action="">
+                <form action="./php/request.php" method="POST">
                     <fieldset>
                         <input type="text" name="titulo" placeholder="Título">
                         <input type="text" name="verba" placeholder="Verba">
                         <input type="date" name="gravacaoInicial" placeholder="Início das Gravações" id="">
                         <input type="date" name="gravacaoFinal" placeholder="Fim das Gravações" id="">
+                        <input type="submit" value="Adicionar" name="submit">
                     </fieldset>
                 </form>
             </div>
             <hr>
             <div class="row">
                 <h3>Deletar</h3>
-                <form action="">
+                <form action="./php/request.php" method="DELETE">
                     <fieldset>
                         <input type="number" name="id" placeholder="Id do filme a ser deletado">
+                        <input type="submit" value="Deletar" name="submit">
                     </fieldset>
                 </form>
             </div>
             <hr>
             <div class="row">
                 <h3>Atualizar</h3>
-                <form action="">
+                <form action="./php/request.php" method="PUT">
                     <fieldset>
                         <input type="number" name="id" placeholder="Id do filme a ser atualizado">
                         <input type="text" name="titulo" placeholder="Título">
                         <input type="text" name="verba" placeholder="Verba">
                         <input type="date" name="gravacaoInicial" placeholder="Início das Gravações" id="">
                         <input type="date" name="gravacaoFinal" placeholder="Fim das Gravações" id="">
+                        <input type="submit" value="Atualizar" name="submit">
                     </fieldset>
                 </form>
             </div>
@@ -58,7 +61,7 @@
                 <table>
                     <thead>
                         <tr>
-
+                
                         </tr>
                     </thead>
                     <tbody>
